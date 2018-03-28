@@ -14,6 +14,7 @@
 		E85A5DB2204FA9C800C8DB04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85A5DB0204FA9C800C8DB04 /* LaunchScreen.storyboard */; };
 		E85A5DBD204FA9C800C8DB04 /* TasksAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A5DBC204FA9C800C8DB04 /* TasksAppTests.swift */; };
 		E8D818F1206B0DCF00F991F7 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D818F0206B0DCF00F991F7 /* TasksViewController.swift */; };
+		E8D818F3206B949700F991F7 /* Cambria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8D818F2206B949700F991F7 /* Cambria.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		E85A5DBC204FA9C800C8DB04 /* TasksAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAppTests.swift; sourceTree = "<group>"; };
 		E85A5DBE204FA9C800C8DB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8D818F0206B0DCF00F991F7 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		E8D818F2206B949700F991F7 /* Cambria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cambria.ttf; path = ../../../../Downloads/cambria/Cambria.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				E85A5DA7204FA9C800C8DB04 /* AppDelegate.swift */,
 				E85A5DA9204FA9C800C8DB04 /* TableViewController.swift */,
 				E85A5DAB204FA9C800C8DB04 /* Main.storyboard */,
+				E8D818F2206B949700F991F7 /* Cambria.ttf */,
 				E85A5DAE204FA9C800C8DB04 /* Assets.xcassets */,
 				E85A5DB0204FA9C800C8DB04 /* LaunchScreen.storyboard */,
 				E85A5DB3204FA9C800C8DB04 /* Info.plist */,
@@ -182,6 +185,7 @@
 			files = (
 				E85A5DB2204FA9C800C8DB04 /* LaunchScreen.storyboard in Resources */,
 				E85A5DAF204FA9C800C8DB04 /* Assets.xcassets in Resources */,
+				E8D818F3206B949700F991F7 /* Cambria.ttf in Resources */,
 				E85A5DAD204FA9C800C8DB04 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

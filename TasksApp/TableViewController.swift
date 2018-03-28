@@ -50,10 +50,12 @@ class TableViewController: UITableViewController, TaskViewDelegate {
             return arrTasks.count
     }
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
         
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!as UITableViewCell
+            
             cell.textLabel!.text = arrTasks[indexPath.row]["title"]
         
             return cell
@@ -73,7 +75,46 @@ class TableViewController: UITableViewController, TaskViewDelegate {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
+     // --------
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let more = UITableViewRowAction(style: .Normal, title: "Delete") { action, index in
+            print("Delete button tapped") //for debugging
+            self.arrTasks.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.tableView.reloadData()
+        }//"🗑️"
+        more.backgroundColor = UIColor.redColor()
         
+        
+        let share = UITableViewRowAction(style: .Normal, title: "Check") { action, index in
+            //tableView.cellForRowAtIndexPath(indexPath: NSIndexPath)?.endEditing(true)
+            tableView.cellForRowAtIndexPath(indexPath)!.accessoryType = .Checkmark
+            self.tableView.setEditing(false, animated: false) //moves cell back
+            
+            print("Complete button tapped")//for debugging
+            
+        }//✔️
+        share.backgroundColor = UIColor.greenColor()
+        
+        
+        let incomp = UITableViewRowAction(style: .Normal, title: "Uncheck") { action, index in
+            //tableView.cellForRowAtIndexPath(indexPath: NSIndexPath)?.endEditing(true)
+            tableView.cellForRowAtIndexPath(indexPath)!.accessoryType = .DisclosureIndicator
+            self.tableView.setEditing(false, animated: false) //moves cell back
+            
+            print("Incomplete button tapped")//for debugging
+            
+        }//✖️
+        incomp.backgroundColor = UIColor.blueColor()
+        
+        return [incomp, share, more]
+    }
+    //overrides delete - fix it
+    //---------
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
