@@ -22,19 +22,25 @@ class TasksViewController: UIViewController, UITextViewDelegate  {
     var strBodyText : String!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         //set text
-        self.txtBody.text = self.strBodyText
+        if self.txtBody.text != nil{
+            self.txtBody.text = self.strBodyText }
+        
         self.txtBody.becomeFirstResponder() //keyboard
         self.txtBody.delegate = self
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1.0) // green back button
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1.0)]
+        self.navigationController?.title
     
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         //update the selected row
         
-        if self.delegate != nil {
+        if self.txtBody.text != nil {
             self.delegate!.didUpdateTaskWithTitle(self.navigationItem.title!, andBody: self.txtBody.text)
         }
     
@@ -66,7 +72,7 @@ class TasksViewController: UIViewController, UITextViewDelegate  {
     func textViewDidBeginEditing(textView: UITextView) {
         
         //color Done - actual RGB values
-        self.btnDoneEditing.tintColor = UIColor(red: 0, green: 122.0/255.0, blue: 1, alpha: 1)
+        self.btnDoneEditing.tintColor = UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1.0)
     }
 
 }
